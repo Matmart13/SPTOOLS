@@ -28,7 +28,7 @@ public class ProductoRestController {
 			return productoService.requestAllProducto();
 		}
 
-		@GetMapping("/productos{id}") //Devuelve todas las categorias
+		@GetMapping("/productos/{id}") //Devuelve todas las categorias
 	    public ResponseEntity<ProductoDTO> getProductoById(@PathVariable Long id) {
 			ProductoDTO productoDTO = productoService.findByIdProducto(id);
 	        if (productoDTO == null) {
@@ -46,7 +46,7 @@ public class ProductoRestController {
 		            .toUri();
 	        return ResponseEntity.created(location).body(nuevoProducto); // HTTP 200 OK, puedes usar 201 Created si quieres
 	    }
-		 @PutMapping("/productos{id}")
+		 @PutMapping("/productos/{id}")
 		    public ResponseEntity<ProductoDTO> updateProducto(@PathVariable Long id,
 		                                                      @RequestBody ProductoDTO categoriaDTO) {
 			 ProductoDTO actualizado = productoService.updateProducto(id, categoriaDTO);
@@ -55,7 +55,7 @@ public class ProductoRestController {
 		        }
 		        return ResponseEntity.ok(actualizado);
 		    }
-		 @DeleteMapping("/productos{id}")
+		 @DeleteMapping("/productos/{id}")
 		    public ResponseEntity<Void> deleteProducto(@PathVariable Long id) {
 			 ProductoDTO productoExistente = productoService.findByIdProducto(id);
 		        if (productoExistente == null) {

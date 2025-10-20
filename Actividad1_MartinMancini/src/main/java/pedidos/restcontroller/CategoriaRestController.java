@@ -37,7 +37,7 @@ public class CategoriaRestController {
         CategoriaDTO nuevaCategoria = categoriaService.createCategoria(categoriaDTO);
         return ResponseEntity.ok(nuevaCategoria); // HTTP 200 OK, puedes usar 201 Created si quieres
     }
-    @PutMapping("/categorias{id}")
+    @PutMapping("/categorias/{id}")
     public ResponseEntity<CategoriaDTO> updateCategoria(@PathVariable Integer id,
                                                          @RequestBody CategoriaDTO categoriaDTO) {
         CategoriaDTO actualizado = categoriaService.updateCategoria(id, categoriaDTO);
@@ -46,7 +46,7 @@ public class CategoriaRestController {
         }
         return ResponseEntity.ok(actualizado);
     }
-    @DeleteMapping("/categorias{id}")
+    @DeleteMapping("/categorias/{id}")
     public ResponseEntity<Void> deleteCategoria(@PathVariable Integer id) {
         CategoriaDTO categoriaExistente = categoriaService.findByIdCategoria(id);
         if (categoriaExistente == null) {

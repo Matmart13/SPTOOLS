@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pedidos.modelo.dto.ProductoVentaDTO;
 import pedidos.service.LineasPedidoService;
 @RestController
-@RequestMapping("/lineapedidos")
+@RequestMapping("/lineapedido")
 public class LineasPedidosRestController {
 	@Autowired
 	LineasPedidoService lineaPedidoService;

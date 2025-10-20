@@ -21,7 +21,6 @@ public class ClienteServiceImpl implements ClienteService{
 
 	@Override
 	public Cliente findById(String cif) {
-		// TODO Auto-generated method stub
 		
 		return lista.stream()
 				.filter(c -> c.getCif().equals(cif))
